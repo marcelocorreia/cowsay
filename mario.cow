@@ -1,0 +1,38 @@
+$x = "\e[m  ";          #reset color
+#$b = "\e[48;5;235m  ";  #fake black
+$g = "\e[48;5;35m  ";   #green
+$b = "\e[48;5;22m  ";   #green dark
+$b = "\e[48;5;21m  ";   #blue
+
+$w = "\e[107m  ";       #white
+$y = "\e[48;5;58m  ";  #collar brown
+$r = "\e[48;5;172m  ";   #brown 1
+$o = "\e[48;5;94m  ";   #brown 2
+$k = "\e[48;5;52m  ";   #dark brown
+$e = "\e[41m  ";        #red
+$h = "\e[48;5;11m  ";   #yellow
+$y = "\e[48;5;223m  ";  #skin color
+#$k = "\e[48;5;235m  ";  #black
+$t = "$thoughts ";
+
+$the_cow = <<EOC;
+          $t
+           $t
+            $t
+              $e$e$e$e$e$e$x
+            $e$e$e$e$e$e$e$e$e$e$e$x
+            $k$k$k$y$y$k$y$x
+          $k$y$k$y$y$y$k$y$y$y$x
+          $k$y$k$k$y$y$y$k$y$y$y$x
+            $k$y$y$y$y$k$k$k$k$x
+              $y$y$y$y$y$y$x
+            $e$e$b$e$e$b$e$e$x
+          $e$e$e$b$e$e$b$e$e$e$x
+        $e$e$e$e$b$b$b$b$e$e$e$e$x
+        $y$y$e$b$h$b$b$h$b$e$y$y$x
+        $y$y$y$b$b$b$b$b$b$y$y$y$x
+        $y$y$b$b$b$b$b$b$b$b$y$y$x
+            $b$b$b$x  $b$b$b$x
+          $k$k$k$x     $k$k$k$x
+        $k$k$k$k$x     $k$k$k$k$x
+EOC
