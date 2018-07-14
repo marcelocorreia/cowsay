@@ -13,6 +13,7 @@ $e = "\e[41m  ";        #red
 $h = "\e[48;5;11m  ";   #yellow
 $y = "\e[48;5;223m  ";  #skin color
 #$k = "\e[48;5;235m  ";  #black
+$e = "\e[48;5;70m  ";     #green
 $t = "$thoughts ";
 
 $the_cow = <<EOC;
@@ -20,12 +21,12 @@ $the_cow = <<EOC;
            $t
             $t
               $e$e$e$e$e$e$x
-            $e$e$e$e$e$e$e$e$e$e$e$x
-            $k$k$k$y$y$k$y$x
-          $k$y$k$y$y$y$k$y$y$y$x
-          $k$y$k$k$y$y$y$k$y$y$y$x
-            $k$y$y$y$y$k$k$k$k$x
-              $y$y$y$y$y$y$x
+      $e$e$e$e$e$e$e$e$e$e$e$x
+            $r$r$r$y$y$r$y$x
+          $r$y$r$y$y$y$r$y$y$y$x
+          $r$y$r$r$y$y$y$r$y$y$y$x
+            $r$y$y$y$y$r$r$r$r$x
+               $y$y$y$y$y$x
             $e$e$b$e$e$b$e$e$x
           $e$e$e$b$e$e$b$e$e$e$x
         $e$e$e$e$b$b$b$b$e$e$e$e$x
@@ -33,6 +34,6 @@ $the_cow = <<EOC;
         $y$y$y$b$b$b$b$b$b$y$y$y$x
         $y$y$b$b$b$b$b$b$b$b$y$y$x
             $b$b$b$x  $b$b$b$x
-          $k$k$k$x     $k$k$k$x
-        $k$k$k$k$x     $k$k$k$k$x
+          $o$o$o$x      $o$o$o$x
+        $o$o$o$o$x      $o$o$o$o$x
 EOC
