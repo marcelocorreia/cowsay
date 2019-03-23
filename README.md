@@ -8,6 +8,7 @@ Couple of cows ([Mario](#mario) & [Luigi](#luigi)) + a [collection of cows](#cow
 - You can also instal individual cows by using the [curl command below directly](#installing-via-curl), Tested on Mac OS, on other Operating better check;)
 - Run it using: ```cowsay -f mario MESSAGE```
 - Or just [run it from a container](#running-from-docker)
+- You can user doecker with a unix alias
 
 ## Installing individual cows via curl
 ```bash
@@ -18,6 +19,15 @@ curl https://raw.githubusercontent.com/marcelocorreia/cowsay/master/my.cow \
 ```bash
 curl https://raw.githubusercontent.com/marcelocorreia/cowsay/master/mario.cow \
     -o /usr/local/share/cows/mario.cow
+```
+
+## Alias
+```bash
+$> alias supercowsay="docker run --rm -it marcelocorreia/cowsay"
+```
+then
+```bash
+$> supercowsay -f mario MESSAGE
 ```
 
 ## Running from docker

@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env ash
 
 ARGS=$@
 
@@ -9,8 +9,9 @@ showCows(){
 
 }
 
-if [ $ARGS == list ];then
+if [ "$ARGS" == "list" ];then
     showCows
+    sleep 0.2
     exit 0
 fi
 
