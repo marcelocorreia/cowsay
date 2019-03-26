@@ -51,8 +51,8 @@ next-version: _setup-versions
 
 _docker-build: _setup-versions
 	sed -i .bk 's/ARG cowsay_version.*/ARG cowsay_version\=\"$(CURRENT_VERSION)\"/' Dockerfile
-	docker build -t marcelocorreia/$(IMAGE_NAME):latest  .
-	docker build -t marcelocorreia/$(IMAGE_NAME):$(CURRENT_VERSION) .
+	docker build -t $(IMAGE_NAME):latest  .
+	docker build -t $(IMAGE_NAME):$(CURRENT_VERSION) .
 	$(call  git_push,Post Release Updating auto generated stuff - version: $(CURRENT_VERSION))
 
 _docker-push: _setup-versions
