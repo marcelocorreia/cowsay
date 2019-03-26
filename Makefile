@@ -1,4 +1,4 @@
-REPO_NAME := cowsay
+COWS:=$(shell cd cows && ls *cow)
 DOCS_DIR := docs
 GITHUB_USER := marcelocorreia
 GIT_BRANCH ?= master
@@ -6,19 +6,16 @@ GIT_REMOTE ?= origin
 IMAGE_NAME := marcelocorreia/cowsay
 NAMESPACE := github.com/marcelocorreia
 RELEASE_TYPE ?= patch
+REPO_NAME := cowsay
 REPO_URL := git@github.com:$(GITHUB_USER)/$(REPO_NAME).git
 SEMVER_DOCKER ?= marcelocorreia/semver
+#
 
-build:
-	docker build -t $(IMAGE_NAME) .
-
-push:
-	docker push $(IMAGE_NAME)
+release: _release
 
 test:
 	docker run --rm -it $(IMAGE_NAME) -f mario Buongiorno!
 
-COWS:=$(shell cd cows && ls *cow)
 
 list-cows:
 	docker run --rm $(IMAGE_NAME) list
@@ -53,8 +50,10 @@ next-version: _setup-versions
 	@echo $(NEXT_VERSION)
 
 _docker-build: _setup-versions
+	sed -i .bk 's/ARG cowsay_version.*/ARG cowsay_version\=\"$(CURRENT_VERSION)\"/' Dockerfile
 	docker build -t marcelocorreia/$(IMAGE_NAME):latest  .
 	docker build -t marcelocorreia/$(IMAGE_NAME):$(CURRENT_VERSION) .
+	$(call  git_push,Post Release Updating auto generated stuff - version: $(CURRENT_VERSION))
 
 _docker-push: _setup-versions
 	docker push marcelocorreia/$(IMAGE_NAME):latest
