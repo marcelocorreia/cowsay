@@ -1,6 +1,6 @@
 FROM alpine:3.9
 
-ARG cowsay_version="0.0.5"
+ARG cowsay_version="0.0.6"
 
 RUN apk update
 RUN set -ex && \
