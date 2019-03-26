@@ -1,6 +1,6 @@
 FROM alpine:3.9
 
-ARG cowsay_version="0.0.2"
+ARG cowsay_version="0.0.3"
 
 RUN apk update
 RUN set -ex && \
@@ -20,5 +20,5 @@ RUN rm -rf /var/cache/apk/* \
 
 RUN apk del git curl
 
-RUNecho ${cowsay_version} > /etc/cowsay_version
+RUN echo ${cowsay_version} > /etc/cowsay_version
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
