@@ -7,7 +7,7 @@ RUN set -ex && \
         apk add --no-cache \
         git \
         perl \
-        curl
+        curl 
 
 RUN git clone https://github.com/schacon/cowsay.git /tmp/cowsay
 WORKDIR /tmp/cowsay
@@ -20,4 +20,5 @@ RUN rm -rf /var/cache/apk/* \
 
 RUN apk del git curl
 
+RUNecho ${cowsay_version} > /etc/cowsay_version
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
