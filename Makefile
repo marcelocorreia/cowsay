@@ -60,8 +60,7 @@ _docker-push: _setup-versions
 	docker push marcelocorreia/$(IMAGE_NAME):$(CURRENT_VERSION)
 
 _release: _setup-versions ;$(call  git_push,Releasing $(NEXT_VERSION)) ;$(info $(M) Releasing version $(NEXT_VERSION)...)## Release by adding a new tag. RELEASE_TYPE is 'patch' by default, and can be set to 'minor' or 'major'.
-	github-release release -u marcelocorreia -r $(REPO_NAME) --tag $(NEXT_VERSION) --name $(NEXT_VERSION) --description "Template engine in Golang full of goodies"
-	github-release upload -u marcelocorreia -r $(REPO_NAME) --tag $(NEXT_VERSION) --name docker-alias-install.sh --file resources/docker-alias-install.sh
+	github-release release -u marcelocorreia -r $(REPO_NAME) --tag $(NEXT_VERSION) --name $(NEXT_VERSION) --description "Collection of cows for old good cowsay"
 	$(MAKE) _docker-build
 	$(MAKE) _docker-push
 
