@@ -11,7 +11,7 @@ showCows(){
 
 if [ "$ARGS" == "list" ];then
     showCows
-    sleep 0.2
+    sleep 0.5
     exit 0
 fi
 
